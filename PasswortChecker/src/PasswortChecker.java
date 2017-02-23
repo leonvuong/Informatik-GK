@@ -9,7 +9,7 @@ public class PasswortChecker {
 		
 	}
 
-	static String passwort = "ÖzgürFehlt"; //Passworteingabe
+	static String passwort = "Abc123"; //Passworteingabe
 	
 	
 	static List<Character> list;
