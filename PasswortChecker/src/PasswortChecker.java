@@ -6,11 +6,10 @@ public class PasswortChecker {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		umwandeln();
-		passwortChecker();
+		
 	}
 
-	static String passwort = "Abc123def";
+	static String passwort = "ÖzgürFehlt"; //Passworteingabe
 	
 	
 	static List<Character> list;
