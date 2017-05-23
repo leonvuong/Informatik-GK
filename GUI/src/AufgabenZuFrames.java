@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JButton;
@@ -13,11 +14,15 @@ public class AufgabenZuFrames extends JFrame {
 	public AufgabenZuFrames(String name)
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(200,200);
+		setSize(750,625);
 		setVisible(true);
 		
 		JButton button1 = new JButton("Mein Button");
-		Container contentPane = meinFrame.getContentPane;
+		Container contentPane = this.getContentPane();
+		contentPane.add(button1, BorderLayout.CENTER);
+		setVisible(true);
+		
 	}
+	
 	
 }

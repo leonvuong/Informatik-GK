@@ -4,18 +4,18 @@ public class GoldbachscheVermutung {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		long time = System.nanoTime();
 		primzahlenBekommen();
 		primzahlenInList();
 		geradeZahl();
-		System.out.println("Primzahlen " + primzahlenList);
-		System.out.println("Gerade Zahlen " + geradeZahlenList);
+		//System.out.println("Primzahlen " + primzahlenList);
+		//System.out.println("Gerade Zahlen " + geradeZahlenList);
 		addition();
+		System.out.println("Fertig");
+		System.out.println("Time: " + (System.nanoTime() - time)/(1000*1000*1000.0) + " s");
 	}
 
-	int primzahl1;
-	int primzahl2;
-	int geradeZahl;
-	static int obereSchranke = 100000;
+	static int obereSchranke = 100000; 
 	static List<Integer> geradeZahlenList = new ArrayList<Integer>();
 	static List<Integer> primzahlenList = new ArrayList<Integer>();
 	static Primzahlsieb prim = new Primzahlsieb(obereSchranke);
@@ -27,7 +27,7 @@ public class GoldbachscheVermutung {
 		
 	}
 	
-	public static void primzahlenInList() //Einsetzen der Primzahlen in eine List.
+	public static void primzahlenInList() //Einsetzen der Primzahlen ins Array primzahlenList.
 	{
 		for(int j=0; j< prim.sieb.length;j++)
 		{
@@ -38,7 +38,7 @@ public class GoldbachscheVermutung {
 		}
 	}
 	
-	public static void geradeZahl() //Berechnung von allen geraden Zahlen bis zur oberen Schranke.
+	public static void geradeZahl() //Berechnung von allen geraden Zahlen bis zur oberen Schranke und einsetzen der Zahlen ins Array.
 	{
 		for(int i=2; i < obereSchranke; i= i + 2)
 		{
@@ -54,11 +54,11 @@ public class GoldbachscheVermutung {
 		{
 			for(int l=0; l< primzahlenList.size(); l++)
 			{
-				for(int m=0; m< primzahlenList.size(); m++)
+				for(int m=primzahlenList.size()-1; m > 0; m= m-1)
 				{
 					if(primzahlenList.get(l) + primzahlenList.get(m) == geradeZahlenList.get(k))
 					{
-						System.out.println(primzahlenList.get(l) + "+" + primzahlenList.get(m) + "=" + geradeZahlenList.get(k));
+						//System.out.println(primzahlenList.get(l) + "+" + primzahlenList.get(m) + "=" + geradeZahlenList.get(k));
 						abbruch=true;
 						break;
 					}
