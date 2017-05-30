@@ -29,6 +29,7 @@ public class GastMaske extends JFrame {
 		public Integer becherart;
 		public Integer groeﬂe;
 		public Integer zuckerart;
+		public Integer extrasart;
 	
 		List <Getraenke> aktuelleBestellung = new ArrayList<Getraenke>();
 	
@@ -106,7 +107,6 @@ public class GastMaske extends JFrame {
 	 * Create the frame.
 	 */
 	public GastMaske() {
-		setResizable(false);
 		setBackground(new Color(240, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 625, 963);
@@ -345,6 +345,7 @@ public class GastMaske extends JFrame {
 		chckbxExtraKaramel = new JCheckBox("extra Karamel");
 		chckbxExtraKaramel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				extrasart = 0;
 			}
 		});
 		contentPane.add(chckbxExtraKaramel, "cell 2 31,growx,aligny top");
@@ -352,6 +353,7 @@ public class GastMaske extends JFrame {
 		chckbxExtraMilch = new JCheckBox("extra Milch");
 		chckbxExtraMilch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				extrasart = 1;
 			}
 		});
 		contentPane.add(chckbxExtraMilch, "cell 2 32,growx,aligny top");
@@ -359,6 +361,7 @@ public class GastMaske extends JFrame {
 		chckbxExtraZucker = new JCheckBox("extra Zucker");
 		chckbxExtraZucker.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				extrasart = 2;
 			}
 		});
 		contentPane.add(chckbxExtraZucker, "cell 2 33,growx,aligny top");
@@ -366,6 +369,7 @@ public class GastMaske extends JFrame {
 		chckbxSahne = new JCheckBox("Sahne");
 		chckbxSahne.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				extrasart = 3;
 			}
 		});
 		contentPane.add(chckbxSahne, "cell 2 34");
@@ -378,7 +382,7 @@ public class GastMaske extends JFrame {
 			public void actionPerformed(ActionEvent arg0) 
 			{	Getraenke getraenke = new Getraenke(kaffeart, milchart, becherart, groeﬂe, zuckerart);
 				aktuelleBestellung.add(getraenke);
-				textAreaAusgabeFeld.append(aktuelleBestellung.get(aktuelleBestellung.size()-1).kaffeartList.get(kaffeart) + aktuelleBestellung.get(aktuelleBestellung.size()-1).milchartList.get(milchart)+ aktuelleBestellung.get(aktuelleBestellung.size()-1).becherartList.get(becherart) + aktuelleBestellung.get(aktuelleBestellung.size()-1).groeﬂenList.get(groeﬂe) + aktuelleBestellung.get(aktuelleBestellung.size()-1).zuckerartList.get(zuckerart));
+				textAreaAusgabeFeld.append(aktuelleBestellung.get(aktuelleBestellung.size()-1).kaffeartList.get(kaffeart) + aktuelleBestellung.get(aktuelleBestellung.size()-1).milchartList.get(milchart)+ aktuelleBestellung.get(aktuelleBestellung.size()-1).becherartList.get(becherart) + aktuelleBestellung.get(aktuelleBestellung.size()-1).groeﬂenList.get(groeﬂe) + aktuelleBestellung.get(aktuelleBestellung.size()-1).zuckerartList.get(zuckerart) + aktuelleBestellung.get(aktuelleBestellung.size()-1).extrasartList.get(extrasart));
 			}
 		});
 		contentPane.add(btnKaffeBesttigen, "cell 2 36,growx");
@@ -387,6 +391,11 @@ public class GastMaske extends JFrame {
 		contentPane.add(textAreaAusgabeFeld, "cell 0 38 2 3,grow");
 		
 		btnBestellungLoeschen = new JButton("Bestellung l\u00F6schen");
+		btnBestellungLoeschen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textAreaAusgabeFeld.setText(" ");
+			}
+		});
 		contentPane.add(btnBestellungLoeschen, "cell 2 38,growx");
 		
 		btnBestellungAufgeben = new JButton("Bestellung aufgeben");

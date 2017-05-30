@@ -17,6 +17,8 @@ public class Getraenke extends GastMaske{
 	public List <String> becherartList = new ArrayList<String>();
 	public List <String> groeﬂenList = new ArrayList<String>();
 	public List <String> zuckerartList = new ArrayList<String>();
+	public List <String> extrasartList = new ArrayList<String>();
+	
 	
 	public Integer kaffeeart;
 	public Integer milchart;
@@ -33,7 +35,7 @@ public class Getraenke extends GastMaske{
 		becherart = becher;
 		groeﬂe = groesse;
 		zuckerart = zucker;
-	}
+		}
 	
 	public void werteInListHinzufuegen()
 	{
@@ -72,6 +74,15 @@ public class Getraenke extends GastMaske{
 		zuckerartList.add("brauner Zucker ");
 		zuckerartList.add("Stevia ");
 		zuckerartList.add("Sueﬂstoff ");
+		
+		// Extras 
+		
+		extrasartList.add("extra Karamel");
+		extrasartList.add("extra Milch");
+		extrasartList.add("extra Zucker");
+		extrasartList.add("Sahne");
+		
+		
 	}
 
 }
