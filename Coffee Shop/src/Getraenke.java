@@ -69,7 +69,7 @@ public class Getraenke extends GastMaske{
 		
 		//Zucker
 		
-		zuckerartList.add("keinZucker ");
+		zuckerartList.add("kein Zucker ");
 		zuckerartList.add("weißer Zucker ");
 		zuckerartList.add("brauner Zucker ");
 		zuckerartList.add("Stevia ");
